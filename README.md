@@ -43,3 +43,6 @@ Abaixo são mostrados os requisitos e regras de negócio levantados para o desen
 | RN05 | O Sistema terá apenas dois tipos de transação fixos: Receita e Despesa. O usuário não poderá cadastrar novos tipos. |
 | RN06 | O valor de toda transação deve ser um número positivo. |
 
+### Diagrama das Entidades
+
+![Foto do diagrama](https://drive.google.com/file/d/1qAxgvwM_2yGPwhDIFKWwKZOwusyribC8/view)
