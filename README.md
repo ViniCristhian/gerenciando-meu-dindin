@@ -45,4 +45,4 @@ Abaixo são mostrados os requisitos e regras de negócio levantados para o desen
 
 ### Diagrama das Entidades
 
-![Foto do diagrama](https://drive.google.com/file/d/1qAxgvwM_2yGPwhDIFKWwKZOwusyribC8/view)
+[Foto do diagrama](https://drive.google.com/file/d/1qAxgvwM_2yGPwhDIFKWwKZOwusyribC8/view)
