@@ -3,24 +3,50 @@ package com.finance.gerenciando_meu_dindin.model;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_usuario")
 public class Usuario {
     
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idUsuario;
+    
     private String nome;
     private String email;
     private String senha;
+
+    @UpdateTimestamp
     private ZonedDateTime dataCadastro;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("usuario")
     private List<Categoria> categorias;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("usuario")
     private List<Transacao> transacoes;
 
     public Usuario() { }
 
     public Long getId() {
-        return id;
+        return idUsuario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNome() {
