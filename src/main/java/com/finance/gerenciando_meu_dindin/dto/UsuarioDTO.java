@@ -1,3 +1,10 @@
 package com.finance.gerenciando_meu_dindin.dto;
 
-public record UsuarioDTO() { }
+import com.finance.gerenciando_meu_dindin.model.Usuario;
+
+public record UsuarioDTO(String nome, String email) {
+
+    public static UsuarioDTO converter(Usuario usuario) {
+        return new UsuarioDTO(usuario.getNome(), usuario.getEmail());
+    }
+}
